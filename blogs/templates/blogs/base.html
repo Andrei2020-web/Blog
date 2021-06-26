@@ -1,4 +1,5 @@
 <p>
+     <a href="{% url 'blogs:index' %}">Домашняя страница</a> -
     {% if user.is_authenticated %}
         Hello, {{ user.username }}.
         <a href="{% url 'users:logout' %}">log out</a>
