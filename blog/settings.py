@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     #Мои приложения
     'blogs',
     'users',
+    #Сторонние приложения
+    'bootstrap4',
     # Приложения по умолчанию
     'django.contrib.admin',
     'django.contrib.auth',
