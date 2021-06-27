@@ -1,19 +1,31 @@
 {% extends "blogs/base.html" %}
 
+{% block page_header %}
+{% if not user.is_authenticated %}
+  <div class='jumbotron'>
+    <h4 class="display-3">Create a blog post.</h4>
+    <p class="lead">Only registered users can post blog post.</p>
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+       role="button">Register &raquo;</a>
+  </div>
+{% endif %}
+<h1>Blog posts:</h1>
+{% endblock page_header %}
+
 {% block content %}
     {% if user.is_authenticated %}
     <p>
-        <a href="{% url 'blogs:new_blog_post' %}">add new blog post</a>
+        <h3><a href="{% url 'blogs:new_blog_post' %}">Add new blog post</a></h3>
     </p>
     {% endif %}
     <p>
     <ul>
         {% for blog_post in blog_posts %}
         <li>
-            <a href="{% url 'blogs:blog_post' blog_post.id %}">{{ blog_post }}</a>
+            <h3><a href="{% url 'blogs:blog_post' blog_post.id %}">{{ blog_post }}</a></h3>
         </li>
         {% empty %}
-        <p>There are no blog posts.</p>
+        <p><h3>There are no blog posts.</h3></p>
         {% endfor %}
     </ul>
     </p>
