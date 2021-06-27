@@ -1,13 +1,17 @@
 {% extends 'blogs/base.html' %}
 
+{% block page_header %}
+    <h3>{{ blog_post }}</h3>
+{% endblock page_header %}
+
 {% block content %}
     {% if user.is_authenticated %}
         {% if user == blog_post.owner %}
-            <p><a href="{% url 'blogs:edit_blog_post' blog_post.id %}">Редактировать сообщение</a></p>
+            <p><h6><a href="{% url 'blogs:edit_blog_post' blog_post.id %}">
+                Редактировать сообщение</a></h6></p>
         {% endif %}
     {% endif %}
-    <p>Blog post:</p>
-    <p>Заголовок: {{ blog_post.title }}</p>
-    <p>Текст: {{ blog_post.text }}</p>
-    <p>Дата добавления: {{ blog_post.date_added }}</p>
+    <p><h5>Заголовок: {{ blog_post.title }}</h5></p>
+    <p><h5>Текст: {{ blog_post.text }}</h5></p>
+    <p><h5>Дата добавления: {{ blog_post.date_added }}</h5></p>
 {% endblock content %}
