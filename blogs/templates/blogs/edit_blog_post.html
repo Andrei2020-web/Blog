@@ -1,5 +1,4 @@
 {% extends 'blogs/base.html' %}
-{% load bootstrap4 %}
 
 {% block page_header %}
     <h2>Edit blog post: {{ blog_post.title }}.</h2>
@@ -8,9 +7,9 @@
 {% block content %}
 <form action="{% url 'blogs:edit_blog_post' blog_post.id %}" method="post" class="form">
     {% csrf_token %}
-    {% bootstrap_form form %}
-    {% buttons %}
+    {{ form }}
+    {% block buttons %}
         <button name="submit" class="btn-primary">edit block post</button>
-    {% endbuttons %}
+    {% endblock buttons %}
 </form>
 {% endblock content %}
