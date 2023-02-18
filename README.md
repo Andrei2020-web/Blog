@@ -1,8 +1,8 @@
-Blog
+# Blog
 ___
 ![python_version](https://img.shields.io/badge/python-3.8-orange)
 ![django_versin](https://img.shields.io/badge/django-3.2-orange)
-![bootstrap_version](https://img.shields.io/badge/bootstrap4-0.1-orange)
+![bootstrap_version](https://img.shields.io/badge/bootstrap-4-orange)
 
 В проекте создано приложение с именем blogs и моделью BlogPost. Модель содержит
 такие поля, как title, text и date_added. Создана домашняя страница, на которой 
@@ -18,3 +18,31 @@ ___
 Чтение всех сообщений доступно всем пользователям, но только зарегистрированные
 пользователи могут создавать новые и редактировать существующие сообщения.
 ![demo1](demo1.jpg)
+
+## Настройка перед запуском
+
+Первое, что нужно сделать, это cклонировать репозиторий:
+
+```sh
+$ git clone https://github.com/Andrei2020-web/Blog.git
+$ cd blog
+```
+
+Создайте виртуальную среду для установки зависимостей и активируйте ее:
+
+```sh
+$ virtualenv venv
+$ source venv/bin/activate
+```
+
+Затем установите зависимости:
+
+```sh
+(venv)$ pip install -r requirements.txt
+```
+
+Запускаем сервер:
+
+```sh
+(venv)$ python manage.py runserver
+```
